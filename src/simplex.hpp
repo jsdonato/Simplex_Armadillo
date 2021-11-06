@@ -9,18 +9,18 @@ public:
 
   void Run();
 
-  arma::mat getPrimalSolution() { return x_bar.value(); }
+  arma::mat getPrimalSolution() { return x_bar; }
 
-  arma::mat getDualSolution() { return y_bar.value(); }
+  arma::mat getDualSolution() { return y_bar; }
 
-  double getOptimalValue() { return arma::as_scalar(c * x_bar.value()); }
+  double getOptimalValue() { return arma::as_scalar(c * x_bar); }
 
 private:
   const arma::mat A;
   const arma::mat b;
   const arma::mat c; 
-  std::optional<arma::mat> x_bar;
-  std::optional<arma::mat> y_bar;
+  arma::mat x_bar;
+  arma::mat y_bar;
   std::vector<size_t> beta;
   std::vector<size_t> eta; 
 

@@ -32,12 +32,12 @@ void Simplex::Run() {
     arma::mat A_beta_inv = A_beta.i();
     y_bar = c.cols(arma::conv_to<arma::uvec>::from(beta)) * A_beta_inv;
     arma::mat x_bar_beta = A_beta_inv * b;
-    x_bar.value().zeros();
-    for (size_t i = 0; i < beta.size(); i++) { x_bar.value()(beta[i], 0) = x_bar_beta(i, 0); }
+    x_bar.zeros();
+    for (size_t i = 0; i < beta.size(); i++) { x_bar(beta[i], 0) = x_bar_beta(i, 0); }
     
     //If c_bar_eta = (c-y_barA)_eta>=0 then stop since this implies
     //that x_bar and y_bar are optimal.
-    arma::mat c_bar = c - y_bar.value() * A;
+    arma::mat c_bar = c - y_bar * A;
     arma::mat c_bar_eta = c_bar.cols(arma::conv_to<arma::uvec>::from(eta));
     bool status1 = arma::all(arma::vectorise(c_bar_eta) >= 0.0);
     if (status1) return;
@@ -58,8 +58,8 @@ void Simplex::Run() {
     arma::mat A_bar_eta_j = A_beta_inv * A.col(eta_j);
     bool status2 = arma::all(arma::vectorise(A_bar_eta_j) <= 0.0);
     if (status2) {
-      x_bar = std::nullopt;
-      y_bar = std::nullopt;
+      x_bar.reset();
+      y_bar.reset();
       return;
     }
 
