@@ -5,7 +5,7 @@ Library with implementation of simplex algorithm which uses the Armadillo C++ li
 The algorithms solves the following two problems as the same time.
 ```
 min cx                     max yb
-    Ax=b  (P)              yA<=c  (D)
+    Ax=b  (P)                  yA<=c  (D)
     x>=0
 ```
 Where `A \in R^mxn`, `b \in R^mx1`, and `c \in R^1xn`.
