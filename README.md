@@ -19,3 +19,6 @@ Where `A \in R^mxn`, `b \in R^mx1`, and `c \in R^1xn`.
 | `arma::mat getDualSolution()` | Gets solution associated with `(D)` if solution is not found then it returns an empty `arma::mat` object. |
 | `double getOptimalValue()` | Returns the optimal value of `cx` and `yb` |
 
+## Requirements
+The Armadillo C++ library for linear algebra is required to run this code.  Information regarding the documentation and installation of this library can be found at http://arma.sourceforge.net/. 
+
