@@ -1,5 +1,5 @@
 # Simplex Armadillo
-Library with implementation of simplex algorithm which uses the Armadillo C++ library.  The implementation of this algorithm is based on the description and derivation provided in the following text (https://github.com/jon77lee/JLee_LinearOptimizationBook/blob/master/JLee.4.0.pdf) which professor Jon Lee utilized and wrote to teach MATH 561 and the University of Michigan.
+Library with implementation of simplex algorithm which uses the Armadillo C++ library.  The implementation of this algorithm is based on the description and derivation provided in the following text (https://github.com/jon77lee/JLee_LinearOptimizationBook/blob/master/JLee.4.0.pdf) which professor Jon Lee utilized and wrote to teach MATH 561 at the University of Michigan.
 
 ## Description
 The algorithms solves the following two problems as the same time.
